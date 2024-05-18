@@ -40,7 +40,7 @@ class ReservaManagerApp:
         arbol.insert('', 'end', values=("Jorge", "Lopez"))
 
         arbol.bind('<Button-1>', self.clickEnArbol)
-        ttk.Button(self.contienedatos, text="Elimina el registro seleccionado", command=self.eliminaRegistro).grid(row=1, column=0,padx=5, pady=5,sticky="nsew")
+        #ttk.Button(self.contienedatos, text="Elimina el registro seleccionado", command=self.eliminaRegistro).grid(row=1, column=0,padx=5, pady=5,sticky="nsew")
         mitabla = "Servicios"
         # Vacío el arbol
         for elemento in arbol.get_children():
@@ -76,7 +76,7 @@ class ReservaManagerApp:
 ##
 ##        self.refresh_event_list()
 
-        # Event Details Frame
+        # Reserva Details Frame
         self.reserva_details_frame = ttk.Frame(self.master)
         self.reserva_details_frame.grid(row=0, column=1, padx=5, pady=0)
 

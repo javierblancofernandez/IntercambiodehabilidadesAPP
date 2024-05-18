@@ -31,7 +31,7 @@ class ControlManagerApp:
         nombre2= "ReservaServicio"
         nombre3= "MiReserva"
         nombre1= "Servicio"
-        messagebox.showinfo("Información", f"Opening Events Page y el boton se llama {nombre}")
+        #messagebox.showinfo("Información", f"Opening Events Page y el boton se llama {nombre}")
 
         events_button = ttk.Button(contienetablas, text="PersonaServicio", command=lambda nombre = "PersonaServicio":self.open_events_page(nombre),width=20)
         events_button.grid(row=0, column=0, padx=10, pady=10)
@@ -62,31 +62,28 @@ class ControlManagerApp:
     def open_events_page(self,nombre):
         #Borramos los widgets que hay en los layouts internos
         for widget in contienedatos.winfo_children():
-            print('***widgetdatos',widget)
+            #print('***widgetdatos',widget)
             widget.destroy()
 
         for widget in contieneformulario.winfo_children():
-            print('***widgetformulario',widget)
+            #print('***widgetformulario',widget)
             widget.destroy()
 
-        messagebox.showinfo("Events", f"Opening Events Page y el boton se llama {nombre}")
-        #mytext = button.cget('text')
         if nombre == "PersonaServicio":
-            messagebox.showinfo("Events", f"Rellena tus datos  y habilidades, para actualizar o borrar habla con el Administrador")
+            #messagebox.showinfo("Events", f"Rellena tus datos  y habilidades, para actualizar o borrar habla con el Administrador")
             ##self.master.withdraw()  # Hide authentication window
             ##root = tk.Tk()
             event_manager_app = pe.EventManagerApp(contieneformulario)
-            
-            root.mainloop()
+            #root.mainloop()
         elif nombre == "Servicio":
             #self.master.withdraw()
-            messagebox.showinfo("Events", f"Rellena los servicios que ofreces, para actualizar o borrar habla con el Administrador")
+            #messagebox.showinfo("Events", f"Rellena los servicios que ofreces, para actualizar o borrar habla con el Administrador")
             servicio_manager_app = serv.ServicioManagerApp(contieneformulario)
         elif nombre == "ReservaServicio":
-            messagebox.showinfo("Events", f"Opening Events Page y el boton se llama {nombre}")
+            #messagebox.showinfo("Events", f"Opening Events Page y el boton se llama {nombre}")
             reserva_manager_app = reserva.ReservaManagerApp(contieneformulario,contienedatos)
         elif nombre == "MiReserva":
-            messagebox.showinfo("Events", f"Opening Events Page y el boton se llama {nombre}")
+            #messagebox.showinfo("Events", f"Opening Events Page y el boton se llama {nombre}")
             mireserva_manager_app = mireserva.MiReservaManagerApp(contieneformulario,contienedatos)
         else:
             messagebox.showerror("Error", "Algo esta psando")
