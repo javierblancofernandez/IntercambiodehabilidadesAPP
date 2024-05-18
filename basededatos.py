@@ -108,7 +108,7 @@ class DatabaseManager:
         try:
             print(f"este es el nif:{nif}")
             #query = 'SELECT * FROM usuarios WHERE cif = ?'
-            cursor.execute(f"SELECT * FROM usuarios WHERE cif = {nif}")
+            cursor.execute(f"SELECT * FROM usuarios WHERE cif = '{nif}'")
             return cursor.fetchall()
         except sqlite3.IntegrityError as e:
             print(f"Error en la base de datos: {e}")        
